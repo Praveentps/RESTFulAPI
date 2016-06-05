@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.praveen.model.Activity;
+import com.praveen.model.User;
 
 /**
  * Created by vagrant on 05/06/16.
@@ -32,6 +33,10 @@ public class ActivityRepositoryStub implements ActivityRepository {
 		activity1.setId("1234");
 		activity1.setDescription("Swimming");
 		activity1.setDuration(55);
+		User user = new User();
+		user.setId("556");
+		user.setName("praveen");
+		activity1.setUser(user);
 		
 		return activity1;
 	}

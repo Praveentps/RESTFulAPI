@@ -11,7 +11,7 @@ public class Activity {
 	private String id;
     private String description;
     private int duration;
-
+    private User user;
     
     public String getId() {
 		return id;
@@ -37,4 +37,14 @@ public class Activity {
     public void setDuration(int duration) {
         this.duration = duration;
     }
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+    
+    
 }
