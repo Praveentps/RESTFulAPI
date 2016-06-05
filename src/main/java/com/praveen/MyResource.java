@@ -1,4 +1,4 @@
-package rest;
+package com.praveen;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
