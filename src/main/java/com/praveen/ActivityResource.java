@@ -23,7 +23,7 @@ public class ActivityResource {
 private ActivityRepository activityRepository = new ActivityRepositoryStub();
 
 @POST
-@Path("activity")//http://localhost:8080/RESTFulAPI/webapi/activity
+@Path("activity")//http://localhost:8080/RESTFulAPI/webapi/activities/activity
 @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 public Activity createActivityParams(MultivaluedMap<String,String> formParams){
