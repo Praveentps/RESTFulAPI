@@ -16,7 +16,7 @@ public class ActivityResource {
 private ActivityRepository activityRepository = new ActivityRepositoryStub();
 
 @GET
-@Produces(MediaType.APPLICATION_JSON)
+@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 public List<Activity> getAllActivities(){
 	return activityRepository.findAllActivity();
 }
