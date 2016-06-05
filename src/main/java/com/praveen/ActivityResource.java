@@ -23,15 +23,29 @@ public class ActivityResource {
 private ActivityRepository activityRepository = new ActivityRepositoryStub();
 
 @POST
+@Path("activity")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+public Activity createActivity(Activity activity){
+	System.out.println("how come here :"+activity.getDescription());
+	System.out.println(activity.getDuration());
+	
+	activityRepository.create(activity);
+	return activity;
+}
+
+
+
+@POST
 @Path("activity")//http://localhost:8080/RESTFulAPI/webapi/activities/activity
 @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 public Activity createActivityParams(MultivaluedMap<String,String> formParams){
-	System.out.println(formParams.getFirst("decription"));
+	System.out.println(formParams.getFirst("description"));
 	System.out.println(formParams.getFirst("duration"));
 	
 	Activity activity = new Activity();
-	activity.setDescription(formParams.getFirst("description"));
+	activity.setDescription("where is this"+formParams.getFirst("description"));
 	activity.setDuration(Integer.parseInt(formParams.getFirst("duration")));
 	
 	activityRepository.create(activity);
