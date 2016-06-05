@@ -8,10 +8,20 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class Activity {
+	private String id;
     private String description;
     private int duration;
 
-    @XmlElement(name="desc")
+    
+    public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	@XmlElement(name="desc")
     public String getDescription() {
         return description;
     }

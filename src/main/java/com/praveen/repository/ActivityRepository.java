@@ -8,4 +8,6 @@ public interface ActivityRepository {
 
 	public abstract List<Activity> findAllActivity();
 
+	public abstract Activity findActivity();
+
 }

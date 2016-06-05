@@ -26,4 +26,13 @@ public class ActivityRepositoryStub implements ActivityRepository {
 		activities.add(activity2);
 		return activities;
 	}
+	@Override
+	public Activity findActivity() {
+		Activity activity1 = new Activity();
+		activity1.setId("1234");
+		activity1.setDescription("Swimming");
+		activity1.setDuration(55);
+		
+		return activity1;
+	}
 }
