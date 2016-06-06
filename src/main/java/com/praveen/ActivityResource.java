@@ -69,6 +69,7 @@ public List<Activity> getAllActivities(){
 @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 @Path("{activityId}")//http://localhost:8080/RESTFulAPI/webapi/activities/1234
 public Activity getActivity(@PathParam ("activityId") String activityId){
+	System.out.println("Getting activity ID: "+activityId);
 	return activityRepository.findActivity();
 }
 
