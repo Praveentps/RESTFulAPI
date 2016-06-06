@@ -23,7 +23,14 @@ public class ActivityResource {
 private ActivityRepository activityRepository = new ActivityRepositoryStub();
 
 @POST
-@Path("activity")
+@Path("activity")//http://localhost:8080/RESTFulAPI/webapi/activities/activity 
+//send the below body
+/*{
+"desc": "running",
+"duration":"55"
+
+}*/
+
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 public Activity createActivity(Activity activity){
