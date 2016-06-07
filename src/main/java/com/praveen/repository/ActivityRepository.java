@@ -12,4 +12,6 @@ public interface ActivityRepository {
 
 	public abstract void create(Activity activity);
 
+	public abstract Activity findActivity(String activityId);
+
 }
