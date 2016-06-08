@@ -29,6 +29,12 @@ public class ActivityClientTest {
 	@After
 	public void tearDown() throws Exception {
 	}
+	@Test
+	public void testDelete(){
+	ActivityClient client= new ActivityClient();
+	client.delete("876");
+	
+	}
 	
 	@Test
 	public void testPut(){

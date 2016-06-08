@@ -16,4 +16,6 @@ public interface ActivityRepository {
 
 	public abstract Activity update(Activity activity);
 
+	public abstract void delete(String activityId);
+
 }

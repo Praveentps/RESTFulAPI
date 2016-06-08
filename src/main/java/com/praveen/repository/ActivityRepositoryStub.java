@@ -17,6 +17,12 @@ public class ActivityRepositoryStub implements ActivityRepository {
 		
 		//should issue  insert statement to the db 
 	};
+	
+	@Override
+	public void delete(String activityId) {
+	//delete from activity where activityId=?
+		
+	}
 	@Override
 	public Activity update(Activity activity) {
 	//search the data base to see activity id is exist 

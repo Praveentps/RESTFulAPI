@@ -51,5 +51,12 @@ public Activity update(Activity activity) {
 	}
 	return response.readEntity(Activity.class);
 }
+public void delete(String activityId) {
+	WebTarget target = client.target("http://localhost:8080/RESTFulAPI/webapi/");
+	Response response = target.path("activities/"+activityId).request(MediaType.APPLICATION_JSON).delete();
+	if(response.getStatus()!=200){
+		throw new RuntimeException(response.getStatus()+": there was error on server.");
+	}	
+}
 
 }
