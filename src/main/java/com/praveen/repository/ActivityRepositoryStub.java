@@ -14,9 +14,20 @@ public class ActivityRepositoryStub implements ActivityRepository {
 	 * @see com.praveen.repository.ActivityRepository#findAllActivity()
 	 */
 	public void create(Activity activity) {
-		//should issue the stmt to insert into db
 		
+		//should issue  insert statement to the db 
 	};
+	@Override
+	public Activity update(Activity activity) {
+	//search the data base to see activity id is exist 
+	//select * from Activity where id=?
+		//should issue the stmt to insert into db
+		//if rs size=0
+		//insert into Activity table else update Activity table	
+		
+	return activity;	
+	}
+	
 	@Override
 	public List<Activity> findAllActivity (){
 		List<Activity> activities = new ArrayList<Activity>();

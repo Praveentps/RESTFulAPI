@@ -14,4 +14,6 @@ public interface ActivityRepository {
 
 	public abstract Activity findActivity(String activityId);
 
+	public abstract Activity update(Activity activity);
+
 }

@@ -29,6 +29,27 @@ public class ActivityClientTest {
 	@After
 	public void tearDown() throws Exception {
 	}
+	
+	@Test
+	public void testPut(){
+		Activity activity = new Activity();
+		activity.setId("1456");
+		activity.setDescription("Bikram yoga");
+		activity.setDuration(90);
+		
+		ActivityClient client= new ActivityClient();
+		activity=client.update(activity);
+		assertNotNull(activity);
+	}
+	@Test
+	public void testCreate(){
+		ActivityClient client= new ActivityClient();
+		Activity activity = new Activity();
+		activity.setDescription("Swimming");
+		activity.setDuration(99);
+		activity= client.create(activity);
+		assertNotNull(activity);
+	}
 
 	@Test
 	public void testGet() {

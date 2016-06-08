@@ -5,6 +5,7 @@ import java.util.List;
 import javax.management.RuntimeErrorException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
@@ -32,6 +33,23 @@ public List<Activity> get(){
 	WebTarget target = client.target("http://localhost:8080/RESTFulAPI/webapi/");
 	List<Activity> response = target.path("activities/").request(MediaType.APPLICATION_JSON).get(new GenericType<List<Activity>>(){});
 	return response;
+}
+public Activity create(Activity activity) {
+	//http://localhost:8080/RESTFulAPI/webapi/activities/activity
+	WebTarget target = client.target("http://localhost:8080/RESTFulAPI/webapi/");
+	Response response = target.path("activities/activity").request().post(Entity.entity(activity,MediaType.APPLICATION_JSON_TYPE));
+	if(response.getStatus()!=200){
+		throw new RuntimeException(response.getStatus()+": there was error on server.");
+	}
+	return response.readEntity(Activity.class);
+}
+public Activity update(Activity activity) {
+	WebTarget target = client.target("http://localhost:8080/RESTFulAPI/webapi/");
+	Response response = target.path("activities/"+activity.getId()).request().put(Entity.entity(activity,MediaType.APPLICATION_JSON_TYPE));
+	if(response.getStatus()!=200){
+		throw new RuntimeException(response.getStatus()+": there was error on server.");
+	}
+	return response.readEntity(Activity.class);
 }
 
 }
