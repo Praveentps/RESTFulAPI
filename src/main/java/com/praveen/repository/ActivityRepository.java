@@ -3,6 +3,7 @@ package com.praveen.repository;
 import java.util.List;
 
 import com.praveen.model.Activity;
+import com.praveen.model.ActivitySearch;
 
 public interface ActivityRepository {
 
@@ -17,5 +18,9 @@ public interface ActivityRepository {
 	public abstract Activity update(Activity activity);
 
 	public abstract void delete(String activityId);
+
+	public abstract List<Activity> findByDescription(List<String> descriptions, int durationFrom, int durationTo);
+
+	public abstract List<Activity> findByConstraints(ActivitySearch search);
 
 }

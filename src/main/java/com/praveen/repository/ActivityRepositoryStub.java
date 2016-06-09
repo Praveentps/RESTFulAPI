@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.praveen.model.Activity;
+import com.praveen.model.ActivitySearch;
 import com.praveen.model.User;
 
 /**
@@ -13,11 +14,35 @@ public class ActivityRepositoryStub implements ActivityRepository {
 	/* (non-Javadoc)
 	 * @see com.praveen.repository.ActivityRepository#findAllActivity()
 	 */
+	
 	public void create(Activity activity) {
 		
 		//should issue  insert statement to the db 
 	};
 	
+	@Override
+	public List<Activity> findByConstraints(ActivitySearch search) {
+		List<Activity> activities = new ArrayList<Activity>();
+		System.out.println(search.getDurationFrom());
+		System.out.println(search.getSearchType());
+		Activity activity= new Activity();
+		activity.setId("1234");
+		activity.setDuration(50);
+		activity.setDescription("Swimming");
+		activities.add(activity);
+		return activities;
+	}
+	@Override
+	public List<Activity> findByDescription(List<String> descriptions,int durationFrom,int durationTo) {
+		//select * from Activities where description in (?,?,?) and duration ? and duration?
+		List<Activity> activities = new ArrayList<Activity>();
+		Activity activity= new Activity();
+		activity.setId("1234");
+		activity.setDuration(50);
+		activity.setDescription("Swimming");
+		activities.add(activity);
+		return activities;
+	}
 	@Override
 	public void delete(String activityId) {
 	//delete from activity where activityId=?
